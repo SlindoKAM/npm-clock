@@ -19,7 +19,9 @@
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </head>
 <body>
-    <h1>KAM CLOCK</h1>
+    <h1>
+        KAM CLOCK
+    </h1>
 
     <div class="container">
         <h2 class="day" id="day"></h2>
@@ -62,8 +64,41 @@
 
     <!-- Modal structure -->
      <div class="mr-modal-slide" id="timezoneModal" aria-hidden="true">
-        <div class="modal_overlay">
+        <div class="modal_overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal_container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <header class="modal_header">
+                    <h3 id="modal-title">
+                        Select a Timezone
+                    </h3>
+                    <button class="modal_close" aria-label="Close Modal" data-micromodal-close></button>
+                </header>
 
+                <main class="modal_contant" id="modalContant">
+                    <select id="timezoneSelect">
+                        <option value="UTC">
+                            UTC
+                        </option>
+                        <option value="America/New York">
+                            New York (EST)
+                        </option>
+                        <option value="Europe/London">
+                            London (GMT)
+                        </option>
+                        <option value="Asia/Tokyo">
+                            Tokyo (JST)
+                        </option>
+                        <option value="Australia/Sydney">
+                            Sydney (AEST)
+                        </option>
+                    </select>
+                </main>
+
+                <footer class="modal_footer">
+                    <button class="modal_btn modal_btn-primary" id="saveTimezone">
+                        Save
+                    </button>
+                </footer>
+            </div>
         </div>
      </div>
 
