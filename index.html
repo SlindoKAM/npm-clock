@@ -6,45 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Slindo Ngcobo">
     <meta name="description" content="Now i am trying to make a website using npm(Node Package Manager)">
+
     <title>
         NPM Project-Clock
     </title>
+
     <link rel="stylesheet" href="style.css" type="text/css">
 
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </head>
 <body>
+    <h1>KAM CLOCK</h1>
+
     <div class="container">
-        <h1 class="day" id="day"></h1>
-        <div class="box">
-            <div class="clock">
-                <div class="front-clock">
-                    <div id="hour">
-                        00
+        <h2 class="day" id="day"></h2>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="clock">
+                    <div class="front-clock">
+                        <div id="hour">
+                            00
+                        </div>
+                        <p>Hours</p>
                     </div>
-                    <p>Hours</p>
+                </div>
+
+                <div class="clock">
+                    <div class="front-clock">
+                        <div id="minute">
+                            00
+                        </div>
+                        <p>Minutes</p>
+                    </div>
+                </div>
+
+                <div class="clock">
+                    <div class="front-clock">
+                        <div id="second">
+                            00
+                        </div>
+                        <p>Seconds</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="clock">
-                <div class="front-clock">
-                    <div id="minute">
-                        00
-                    </div>
-                    <p>Minutes</p>
-                </div>
-            </div>
-
-            <div class="clock">
-                <div class="front-clock">
-                    <div id="second">
-                        00
-                    </div>
-                    <p>Seconds</p>
-                </div>
-            </div>
+            <button class="mr-modal" id="openModal">
+                Select Timezone
+            </button>
         </div>
     </div>
+
+    <!-- Modal structure -->
+     <div class="mr-modal-slide" id="timezoneModal" aria-hidden="true">
+        <div class="modal_overlay">
+
+        </div>
+     </div>
 
     <script src="main.js"></script>
 </body>

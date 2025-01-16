@@ -6,7 +6,7 @@ const day = document.getElementById('day');
 function updateTime()
 {
     const today = dayjs();
-    const formattedDate = today.format('DD MM YYYY');
+    const formattedDate = today.format('DD MMM YYYY');
     const h = today.format('HH');
     const min = today.format('mm');
     const sec = today.format('ss');
