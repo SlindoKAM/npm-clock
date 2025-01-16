@@ -186,3 +186,11 @@ button:active{
         margin-top: 0.8rem;
     }
 }
+
+.mr-modal-slide{
+    display: none;
+}
+
+.mr-modal-slide.is-open{
+    display: block;
+}

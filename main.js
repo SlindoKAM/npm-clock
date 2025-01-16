@@ -1,5 +1,7 @@
 dayjs.extend(dayjs_plugin_utc);
-dayjs.extend(dayjs_plugin_timezome);
+dayjs.extend(dayjs_plugin_timezone);
+
+MicroModal.init();
 
 const hour = document.getElementById('hour');
 const minute = document.getElementById('minute');
