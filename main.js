@@ -1,21 +1,56 @@
+dayjs.extend(dayjs_plugin_utc);
+dayjs.extend(dayjs_plugin_timezome);
+
 const hour = document.getElementById('hour');
 const minute = document.getElementById('minute');
 const second = document.getElementById('second');
 const day = document.getElementById('day');
+const openModalBtn = document.getElementById('openModal');
+const saveTimezoneBtn = document.getElementById('saveTimezone');
+const timezoneSelect = document.getElementById('timezoneSelect');
 
+//Default Timezone
+let selectedTimezone = 'UTC';
+
+//Function to update the time based on the selected timezone
 function updateTime()
 {
-    const today = dayjs();
-    const formattedDate = today.format('DD MMM YYYY');
-    const h = today.format('HH');
-    const min = today.format('mm');
-    const sec = today.format('ss');
-
-    day.textContent = formattedDate;
-    hour.textContent = h;
-    minute.textContent = min;
-    second.textContent = sec;
+    const now = dayjs().tz(selectedTimezone);
+    day.textContent = now.format('DD MMM YYYY');
+    hour.textContent = now.format('HH');
+    minute.textContent = now.format('mm');
+    second.textContent = now.format('ss');
 }
+
+//Event listener for the modal open button
+openModalBtn.addEventListener('click', () =>
+{
+    MicroModal.show('timezoneModal');
+});
+
+//Event listener for the save timezone button
+saveTimezoneBtn.addEventListener('click', () =>
+{
+    selectedTimezone = timezoneSelect.value;
+    MicroModal.close('timezoneModal');
+    
+    //Update time immediately after selecting timezone
+    updateTime();
+});
+
+// function updateTime()
+// {
+//     const today = dayjs();
+//     const formattedDate = today.format('DD MMM YYYY');
+//     const h = today.format('HH');
+//     const min = today.format('mm');
+//     const sec = today.format('ss');
+
+//     day.textContent = formattedDate;
+//     hour.textContent = h;
+//     minute.textContent = min;
+//     second.textContent = sec;
+// }
 
 //Update time every second
 setInterval(updateTime, 1000);
