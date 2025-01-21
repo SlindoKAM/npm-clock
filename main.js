@@ -14,6 +14,9 @@ const timezoneSelect = document.getElementById('timezoneSelect');
 //Default Timezone
 let selectedTimezone = 'UTC';
 
+//Fetch all available timezone
+const timezones = Intl.supportedValuesOf('timeZone')
+
 //Function to update the time based on the selected timezone
 function updateTime()
 {
@@ -27,6 +30,16 @@ function updateTime()
 //Event listener for the modal open button
 openModalBtn.addEventListener('click', () =>
 {
+    //Populate dropdown dynamically
+    timezoneSelect.innerHTML = '';
+    timezones.forEach((timezone) =>
+    {
+        const option = document.createElement('option');
+        option.value = timezone;
+        option.textContent = timezone;
+        timezoneSelect.appendChild(option);
+    });
+    
     MicroModal.show('timezoneModal');
 });
 

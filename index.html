@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <button class="mr-modal" id="openModal" data-micromodal-trigger="timezoneModal" data-custom-open>
+            <button class="mr-modal" id="openModal">
                 Select Timezone
             </button>
         </div>
@@ -72,12 +72,14 @@
                     <h3 id="modal-title">
                         Select a Timezone
                     </h3>
-                    <button class="modal_close" aria-label="Close Modal" data-micromodal-close></button>
+                    <button class="modal_close" aria-label="Close Modal" data-micromodal-close>
+                        Close
+                    </button>
                 </header>
 
                 <main class="modal_contant" id="modalContant">
-                    <select id="timezoneSelect">
-                        <option value="UTC">
+                    <select class="timezone-select" id="timezoneSelect">
+                        <!-- <option value="UTC">
                             UTC
                         </option>
                         <option value="America/New York">
@@ -91,7 +93,7 @@
                         </option>
                         <option value="Australia/Sydney">
                             Sydney (AEST)
-                        </option>
+                        </option> -->
                     </select>
                 </main>
 

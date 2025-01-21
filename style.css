@@ -189,8 +189,77 @@ button:active{
 
 .mr-modal-slide{
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
 }
 
 .mr-modal-slide.is-open{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_container{
+    background: #1A1A1A;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 90%;
+    padding: 2rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.modal_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* .modal_close{
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: 0;
+} */
+
+h3{
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+    background: linear-gradient(90deg, #00DBDE, #FC00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal_contant{
+    margin-bottom: 1.5rem;
+}
+
+.timezone-select{
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background: #0D0D0D;
+    color: #FFFFFF;
+    border: 2px solid #2370F5;
+    font-size: 1rem;
+}
+
+/* .timezone-select option{
+    background: #0D0D0D;
+    color: #FFFFFF;
+    padding: 0.5rem;
+} */
+
+.modal_footer{
+    display: flex;
+    justify-content: center;
 }
