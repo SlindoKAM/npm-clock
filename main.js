@@ -10,6 +10,7 @@ const day = document.getElementById('day');
 const openModalBtn = document.getElementById('openModal');
 const saveTimezoneBtn = document.getElementById('saveTimezone');
 const timezoneSelect = document.getElementById('timezoneSelect');
+const selectedTimezoneDis = document.getElementById('selectedTimezoneDisplay');
 
 //Default Timezone
 let selectedTimezone = 'UTC';
@@ -39,18 +40,24 @@ openModalBtn.addEventListener('click', () =>
         option.textContent = timezone;
         timezoneSelect.appendChild(option);
     });
-    
+
     MicroModal.show('timezoneModal');
 });
+
 
 //Event listener for the save timezone button
 saveTimezoneBtn.addEventListener('click', () =>
 {
     selectedTimezone = timezoneSelect.value;
     MicroModal.close('timezoneModal');
+
+    //Update the displayed timezone
+    selectedTimezoneDis.textContent = `Selected Timezone: ${selectedTimezone}`;
     
     //Update time immediately after selecting timezone
     updateTime();
+
+    selectedTimezoneDis.style.display = 'flex';
 });
 
 // function updateTime()

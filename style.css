@@ -204,6 +204,14 @@ button:active{
     justify-content: center;
 }
 
+.selected-display{
+    /* background: linear-gradient(90deg, #00DBDE, #FC00FF); */
+    color: #FFFFFF;
+    border-radius: 2rem;
+    border: 2px solid #2370F5;
+    display: none;
+}
+
 .modal_container{
     background: #1A1A1A;
     border-radius: 1rem;
